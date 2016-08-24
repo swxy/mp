@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Router</title>
+    <script src="../../lib/simple-backbone-router.js"></script>
+</head>
+<body>
+<a href="#/home">home</a>
+<a href="#/about">about</a>
+<div id="content">
+    root
+</div>
+
+<script>
+    let $content = document.querySelector('#content');
+    let log = (text) => {
+        $content.innerHTML = text;
+    };
+    let router = new Router({routes: {
+        '/home': function (args) {
+            log('home');
+        },
+        '/about': function (args) {
+            log('about');
+        }
+    }});
+    history.start();
+</script>
+</body>
+</html>
